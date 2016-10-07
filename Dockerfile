@@ -83,6 +83,8 @@ RUN mkdir /etc/service/20-exim
 COPY services/exim/exim.runit /etc/service/20-exim/run
 COPY services/exim/update-exim4.conf.conf /etc/exim4/update-exim4.conf.conf
 
+RUN wget -P /opt/pharicator/src/extensions/ https://github.com/wanthings/phabricator-zh_CN/raw/master/PhabricatorCNChineseTranslation.php
+
 # Setup phabricator
 RUN     mkdir -p /opt/phabricator/conf/local /var/repo
 
